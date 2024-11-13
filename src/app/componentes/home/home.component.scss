@@ -1,0 +1,54 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+.body {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espacio entre los botones */
+}
+
+.boton {
+    width: 85vw;
+    height: 43vh;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#lindo
+{
+    background-image: url('../../../assets/lindo.png');
+}
+
+#feo
+{
+    background-image: url('../../../assets/feo.png');
+}
+
+.logout-container {
+    height: 10vh; /* Altura del contenedor */
+    background-color: black; /* Fondo negro */
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+}
+
+.logout {
+    color: white; /* Color del texto del botón */
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el texto */
+}

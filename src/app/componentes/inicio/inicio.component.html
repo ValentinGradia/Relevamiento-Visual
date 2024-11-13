@@ -1,0 +1,21 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h2 class="active"> Relevamiento Visual </h2>
+    <div class="fadeIn first">
+      <img src="assets/icono.png" style="border-radius: 20px;" id="icon" alt="User Icon" />
+    </div>
+
+    <div style="margin-top: 20px;">
+      <input class="input-group" [(ngModel)]="correo" placeholder="Correo" name="un" />
+      <input class="input-group" [(ngModel)]="contrasenia" type="password"  placeholder="Contraseña" name="pw" />
+    </div>
+    <input type="submit" class="fadeIn fourth" (click)="verificarUsuario()" value="Iniciar">
+
+    <div id="formFooter" style="display: flex;justify-content: space-around;">
+      <button (click)="accederAplicacion('admin')"><i class="fa-solid fa-user-tie fa-2xl"></i></button>
+      <button (click)="accederAplicacion('usuario')"><i class="fa-solid fa-user fa-2xl"></i></button>
+      <button (click)="accederAplicacion('invitado')"><i class="fa-solid fa-user-graduate fa-2xl"></i></button>
+    </div>
+
+  </div>  
+</div>

@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="titulo">
+    <h2>COSAS FEAS</h2>
+  </div>
+
+  @if (cargando) {
+    <div style="margin-top: 45vh;display: flex;justify-content: center;">
+      <h2 class="visually-hidden">Cargando...</h2>
+      <img  src="assets/icono.png" style="height: 60px;width: 60px;margin-left: 20px;">
+    </div>
+  }
+  
+  @if (!cargando) {
+    <div class="contenedor" id="contenedor" >
+      <h2 style="font-size: 32px;">Ingrese el nombre de la foto</h2>
+      <input [(ngModel)]="nombreFoto" name="nombreFoto" type="text" placeholder="Nombre de la foto">
+      <button style="height: 48px;" (click)="sacarFoto()" class="btn-gray">Aceptar</button>
+      <!-- <input type="file" #fileInput accept="image/*" (change)="onFileSelected($event)" style="display: none;"> -->
+      <button style="height: 48px;" (click)="volverFotos()" class="btn-gray">Volver</button>
+    </div>
+  }
+
+  @if(!cargando)
+  {
+    @if (!desplegarLikes) {
+
+      <div class="fotos" id="fotos">
+        <ul>
+          <li>
+              @for (foto of fotos; track $index) {
+                <div style="margin-top: 20px;">
+                  <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{foto.correo}}</h3>
+                  <img style="height: 200px;width: 88%;;" [src]="foto.url">
+                  <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;margin-bottom: 0;" >{{foto.nombre}}</h3>
+                  <div style="text-align: start;background-color: transparent;border-radius: 0;box-shadow: none;display: flex;padding-top: 0;">
+                    <button style="background-color: transparent;" [ngClass]="{'rojo' : foto.likes.includes(correoUsuario) && foto.likes.length > 0}" (click)="darLike(foto)"><i  class="fa-solid fa-heart fa-2xl"></i></button>
+                    <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;margin-left: 10px;">{{foto.likes.length}}</p>
+                    <span style="margin-left: 30%;">
+                      <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{ foto.fecha |  date:'dd/MM/yyyy HH:mm' }}</p>
+                    </span>
+                  </div>
+                </div>
+              }
+          </li>
+        </ul>
+      </div>
+    }
+    <div id="contenedor-likes" style="height: 83vh;margin-top: 2vh;text-align: center;">
+      <h2>Gráfico de likes</h2>
+      <div style="width: 100vw;text-align: center;margin-top: 2vh;"><canvas id="barras" height="380" #barras></canvas></div>
+    </div>
+    
+    <div class="footer" id="footer">
+      @if (desplegarLikes) {
+        
+        <i (click)="sacarLikes()" class="fa-solid fa-backward fa-2xl"></i>
+      }
+      @else {
+        <i routerLink="/home" class="fa-solid fa-backward fa-2xl"></i>
+      }
+      <i (click)="tomarFoto()" class="fa-solid fa-camera fa-2xl"></i>
+      <i (click)="mostrarLikesBarras()" class="fa-solid fa-heart fa-2xl"></i>
+    </div>
+  }
+</div>
