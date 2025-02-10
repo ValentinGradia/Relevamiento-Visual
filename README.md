@@ -1,3 +1,5 @@
+# Relevamiento visual
+
 Aplicacion para subir fotos y tener la posibilidad de darle me gusta a estas, como si fuera una especie de Instagram. Al iniciar sesion la panatalla principal se divide en dos botones que te permiten elegir entre "Cosas lindas" y "Cosas feas".
  La aplicación facilita la recopilación de fotos, votaciones (me gustas) y visualización de resultados sobre las mismas fotos subidas.
 
@@ -9,4 +11,4 @@ Aplicacion para subir fotos y tener la posibilidad de darle me gusta a estas, co
   - Visualizacion de me gustas:
       -> Grafico de torta para las cosas lindas
       -> Grafico de barras para las cosas feas
-  -Historial personal: Una seccion muestra todas las fotos que el usuario ha subido
+  - Historial personal: Una seccion muestra todas las fotos que el usuario ha subido
